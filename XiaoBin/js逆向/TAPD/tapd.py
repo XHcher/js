@@ -30,5 +30,6 @@ headers = {
 }
 
 response = requests.post(url, data=datas, headers=headers)
+print(response.text)
 response.encoding = 'utf-8'
 print(response.cookies)
