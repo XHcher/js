@@ -128,3 +128,4 @@ function getMD5Value(data) {
     var s = a + b + c;
     return MD5(s);
 }
+console.log(getMD5Value("08181hqxb"))
