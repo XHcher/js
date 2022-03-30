@@ -1,4 +1,5 @@
-var xbsh
+var window = global
+var hq
 !function(e) {
     function n(data) {
         for (var n, d, c = data[0], l = data[1], f = data[2], i = 0, _ = []; i < c.length; i++)
@@ -40,7 +41,7 @@ var xbsh
         t.l = !0,
         t.exports
     }
-    xbsh = c;
+    hq = c;
     c.e = function(e) {
         var n = []
           , t = o[e];
@@ -738,13 +739,13 @@ var xbsh
         }
     }
 });
-var o = xbsh("_341")
-c = xbsh.n(o)
+var o = hq("_341")
+c = hq.n(o)
 var t = {
-    "timestamp": "1648613738",
-    "nonce": "mf7gnaom",
-    "platform": "pc",
-    "version": "1.0"
+    timestamp: "" + (new Date).getTime(),
+    nonce: Math.random().toString(36).slice(-8),
+    platform: "pc",
+    version: "1"
 }
 function _(input) {
     return c()(input)
@@ -766,3 +767,4 @@ function x(t) {
     t.sign = o,
     t
 }
+console.log(x(t))
