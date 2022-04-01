@@ -26,4 +26,3 @@ cookies = setis.cookies.get_dict()
 res = requests.get("https://account.talkingdata.com/client/api/v1/public/group", headers=headers, cookies=cookies)
 
 print(res.text)
-
