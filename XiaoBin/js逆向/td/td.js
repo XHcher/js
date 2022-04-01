@@ -1,12 +1,11 @@
 const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
-const dom = new JSDOM(`<!DOCTYPE html><p>Hello world</p>`);
-window = dom.window;
+const { window } = new JSDOM(`<!DOCTYPE html>`);
+const $ = require('jQuery')(window);
 document = window.document;
-XMLHttpRequest = window.XMLHttpRequest;
-
-
-
+global.navigator={
+userAgent: 'node.js',
+};
 function hex2b64(a) {
     var b, c, d = "";
     for (b = 0; b + 3 <= a.length; b += 3)
@@ -5228,7 +5227,6 @@ function() {
         var n = null,
             o = []
     }
-    "function" == typeof define && define.amd && define.amd.jQuery ? define(["jquery"], a) : a(jQuery)
 }(),
 
 function(a) {
@@ -11190,9 +11188,8 @@ RSAKey.prototype.setPublic = RSASetPublic,
 RSAKey.prototype.encrypt = RSAEncrypt;
 var rsa = new RSAKey;
 rsa.setPublic("8b6c944808b245a98794e77739f8de7135f59f7d3879d9bedca396f6428265434dc62549d1dd1aad87a94d9de80619979d3460f806501887307d15914184a9913e90e6a816b120027b9008bbec09a95fcd9cf38da535a7ece68d25a3884c4a0da3c02d22e4de8ad44f8a6b5d6c63b91c682925e1846ae043d0a848890f078a67", "10001");
-_pwd = hex2b64(rsa.encrypt("081819hqxb"))
 
-function hqxb() {
-    _pwd = hex2b64(rsa.encrypt("081819hqxb"))
+function hqxb(password) {
+    _pwd = hex2b64(rsa.encrypt(password))
     return _pwd
 }
